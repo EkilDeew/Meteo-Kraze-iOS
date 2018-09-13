@@ -23,6 +23,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        determineMyCurrentLocation()
     }
 
     func determineMyCurrentLocation() {
@@ -40,11 +42,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
+        manager.stopUpdatingLocation()
         
-        // manager.stopUpdatingLocation()
-        
+        MeteoService.shared.getWeather(lat: userLocation.coordinate.latitude as Double,
+                                       lon: userLocation.coordinate.longitude as Double)
         print("user latitude = \(userLocation.coordinate.latitude)")
         print("user longitude = \(userLocation.coordinate.longitude)")
     }

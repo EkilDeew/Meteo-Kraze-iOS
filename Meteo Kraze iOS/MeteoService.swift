@@ -33,8 +33,8 @@ class MeteoService {
         }
     }
     
-    func getWeather(lat: Float, lon: Float) {
-        let url = "http://api.openweathermap.org/data/2.5/weather?lat="
+    func getWeather(lat: Double, lon: Double) {
+        let url = "https://api.openweathermap.org/data/2.5/weather?lat="
             + String(lat) + "&lon=" + String(lon) + "&appid=" + apiKey
         Alamofire.request(url).responseJSON { response in
             do {
@@ -71,6 +71,7 @@ class MeteoService {
                                sunset: sunset,
                                isCurrent: false,
                                description: description)
+        print("Guillaume - Got weather from city \(data.cityName)")
         self.cities.append(data)
     }
     
