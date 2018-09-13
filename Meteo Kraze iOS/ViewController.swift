@@ -34,12 +34,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         
         MeteoService.shared.getWeahter(city: "Paris")
+        MeteoService.shared.getWeahter(city: "London")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCityButton))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        determineMyCurrentLocation()
+        if MeteoService.shared.cities.value.count > 0 && !MeteoService.shared.cities.value[0].isCurrent {
+            determineMyCurrentLocation()
+        }
     }
 
     func determineMyCurrentLocation() {
@@ -93,6 +98,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
             i = i + 1
         }
+    }
+    
+    @objc func addCityButton() {
+        let addCityController = self.storyboard?.instantiateViewController(withIdentifier: "AddCity") as! AddCityViewController
+        
+        self.navigationController?.pushViewController(addCityController, animated: true)
     }
 }
 

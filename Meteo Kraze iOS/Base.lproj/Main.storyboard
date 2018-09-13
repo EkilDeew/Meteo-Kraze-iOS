@@ -190,5 +190,33 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--Add City View Controller-->
+        <scene sceneID="a82-8M-gpG">
+            <objects>
+                <viewController storyboardIdentifier="AddCity" id="xcC-SP-c3k" customClass="AddCityViewController" customModule="Meteo_Kraze_iOS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="og4-xX-Dv4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qiG-H7-lIu">
+                                <rect key="frame" x="16" y="35" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qiG-H7-lIu" firstAttribute="leading" secondItem="Xvs-UP-a7w" secondAttribute="leading" constant="16" id="EC3-UZ-Ayk"/>
+                            <constraint firstItem="qiG-H7-lIu" firstAttribute="top" secondItem="Xvs-UP-a7w" secondAttribute="top" constant="15" id="Qgy-rU-sHu"/>
+                            <constraint firstItem="Xvs-UP-a7w" firstAttribute="trailing" secondItem="qiG-H7-lIu" secondAttribute="trailing" constant="16" id="e3L-Yw-thy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xvs-UP-a7w"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8uv-SC-hSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1966" y="134"/>
+        </scene>
     </scenes>
 </document>

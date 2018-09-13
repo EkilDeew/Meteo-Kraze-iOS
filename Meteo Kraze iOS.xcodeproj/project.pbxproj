@@ -15,6 +15,7 @@
 		62F5595A214A52D5009BB566 /* MeteoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F55959214A52D5009BB566 /* MeteoService.swift */; };
 		62F5595C214A5402009BB566 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5595B214A5402009BB566 /* WeatherData.swift */; };
 		62F5595E214A865B009BB566 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5595D214A865B009BB566 /* CityCell.swift */; };
+		62F55960214ABA7E009BB566 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5595F214ABA7E009BB566 /* AddCityViewController.swift */; };
 		730164D28C95150F89182DDD /* Pods_Meteo_Kraze_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E982A70545B2FA183039FD /* Pods_Meteo_Kraze_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		62F55959214A52D5009BB566 /* MeteoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoService.swift; sourceTree = "<group>"; };
 		62F5595B214A5402009BB566 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		62F5595D214A865B009BB566 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		62F5595F214ABA7E009BB566 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		9636CCD4A1B862EA239BAE49 /* Pods-Meteo Kraze iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteo Kraze iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meteo Kraze iOS/Pods-Meteo Kraze iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		96E982A70545B2FA183039FD /* Pods_Meteo_Kraze_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meteo_Kraze_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F3876B422C37BA3A8EBF18 /* Pods-Meteo Kraze iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteo Kraze iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meteo Kraze iOS/Pods-Meteo Kraze iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				62F55959214A52D5009BB566 /* MeteoService.swift */,
 				62F5595B214A5402009BB566 /* WeatherData.swift */,
 				62F5595D214A865B009BB566 /* CityCell.swift */,
+				62F5595F214ABA7E009BB566 /* AddCityViewController.swift */,
 			);
 			path = "Meteo Kraze iOS";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62B09081214913C300EF494F /* ViewController.swift in Sources */,
+				62F55960214ABA7E009BB566 /* AddCityViewController.swift in Sources */,
 				62B0907F214913C300EF494F /* AppDelegate.swift in Sources */,
 				62F5595E214A865B009BB566 /* CityCell.swift in Sources */,
 				62F5595C214A5402009BB566 /* WeatherData.swift in Sources */,
