@@ -8,15 +8,26 @@
 
 import UIKit
 
-class AddCityViewController: UIViewController {
+class AddCityViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var addCityTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.addCityTextField.delegate = self
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        guard let cityName = textField.text else {
+            self.navigationController?.popViewController(animated: true)
+            return true
+        }
+        MeteoService.shared.getWeather(city: cityName)
+        self.navigationController?.popViewController(animated: true)
+        return true
+    }
     /*
     // MARK: - Navigation
 

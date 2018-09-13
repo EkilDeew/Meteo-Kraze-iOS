@@ -18,7 +18,7 @@ class MeteoService {
     
     var cities = Variable<[WeatherData]>([WeatherData]())
     
-    func getWeahter(city: String) {
+    func getWeather(city: String) {
         let url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey
         Alamofire.request(url).responseJSON { response in
             do {

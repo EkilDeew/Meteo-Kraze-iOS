@@ -31,10 +31,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.refresh()
             })
             .disposed(by: disposeBag)
-
-        
-        MeteoService.shared.getWeahter(city: "Paris")
-        MeteoService.shared.getWeahter(city: "London")
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCityButton))
     }
@@ -42,7 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if MeteoService.shared.cities.value.count > 0 && !MeteoService.shared.cities.value[0].isCurrent {
+        if MeteoService.shared.cities.value.count == 0 {
             determineMyCurrentLocation()
         }
     }
@@ -141,6 +137,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.humidityLabel.text = "Humidity : " + String(city.humidity) + "%"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if MeteoService.shared.cities.value[indexPath.row].isCurrent == false {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
+            MeteoService.shared.cities.value.remove(at: indexPath.row)
+        }
     }
  
 }
