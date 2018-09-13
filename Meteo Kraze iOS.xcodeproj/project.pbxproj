@@ -12,6 +12,9 @@
 		62B09084214913C300EF494F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B09082214913C300EF494F /* Main.storyboard */; };
 		62B09086214913C300EF494F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62B09085214913C300EF494F /* Assets.xcassets */; };
 		62B09089214913C300EF494F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B09087214913C300EF494F /* LaunchScreen.storyboard */; };
+		62F5595A214A52D5009BB566 /* MeteoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F55959214A52D5009BB566 /* MeteoService.swift */; };
+		62F5595C214A5402009BB566 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5595B214A5402009BB566 /* WeatherData.swift */; };
+		730164D28C95150F89182DDD /* Pods_Meteo_Kraze_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E982A70545B2FA183039FD /* Pods_Meteo_Kraze_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		62B09085214913C300EF494F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62B09088214913C300EF494F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62B0908A214913C300EF494F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62F55959214A52D5009BB566 /* MeteoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoService.swift; sourceTree = "<group>"; };
+		62F5595B214A5402009BB566 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		9636CCD4A1B862EA239BAE49 /* Pods-Meteo Kraze iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteo Kraze iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meteo Kraze iOS/Pods-Meteo Kraze iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		96E982A70545B2FA183039FD /* Pods_Meteo_Kraze_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meteo_Kraze_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F3876B422C37BA3A8EBF18 /* Pods-Meteo Kraze iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteo Kraze iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meteo Kraze iOS/Pods-Meteo Kraze iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				730164D28C95150F89182DDD /* Pods_Meteo_Kraze_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E40CDB0D98A47FFD44EE167 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96E982A70545B2FA183039FD /* Pods_Meteo_Kraze_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39ACB05D9D9A69F5C0DC99FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9636CCD4A1B862EA239BAE49 /* Pods-Meteo Kraze iOS.debug.xcconfig */,
+				A6F3876B422C37BA3A8EBF18 /* Pods-Meteo Kraze iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		62B09072214913C300EF494F = {
 			isa = PBXGroup;
 			children = (
 				62B0907D214913C300EF494F /* Meteo Kraze iOS */,
 				62B0907C214913C300EF494F /* Products */,
+				39ACB05D9D9A69F5C0DC99FE /* Pods */,
+				1E40CDB0D98A47FFD44EE167 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +88,8 @@
 				62B09085214913C300EF494F /* Assets.xcassets */,
 				62B09087214913C300EF494F /* LaunchScreen.storyboard */,
 				62B0908A214913C300EF494F /* Info.plist */,
+				62F55959214A52D5009BB566 /* MeteoService.swift */,
+				62F5595B214A5402009BB566 /* WeatherData.swift */,
 			);
 			path = "Meteo Kraze iOS";
 			sourceTree = "<group>";
@@ -71,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62B0908D214913C300EF494F /* Build configuration list for PBXNativeTarget "Meteo Kraze iOS" */;
 			buildPhases = (
+				D74687BC95B82604F45DE145 /* [CP] Check Pods Manifest.lock */,
 				62B09077214913C300EF494F /* Sources */,
 				62B09078214913C300EF494F /* Frameworks */,
 				62B09079214913C300EF494F /* Resources */,
+				7F5F3C9E937DC7B4F4CD972C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +162,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7F5F3C9E937DC7B4F4CD972C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meteo Kraze iOS/Pods-Meteo Kraze iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Meteo Kraze iOS/Pods-Meteo Kraze iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D74687BC95B82604F45DE145 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Meteo Kraze iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		62B09077214913C300EF494F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -137,6 +210,8 @@
 			files = (
 				62B09081214913C300EF494F /* ViewController.swift in Sources */,
 				62B0907F214913C300EF494F /* AppDelegate.swift in Sources */,
+				62F5595C214A5402009BB566 /* WeatherData.swift in Sources */,
+				62F5595A214A52D5009BB566 /* MeteoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +355,13 @@
 		};
 		62B0908E214913C300EF494F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9636CCD4A1B862EA239BAE49 /* Pods-Meteo Kraze iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3Y2JU442CX;
+				DEVELOPMENT_TEAM = TAAUM7S3Z8;
 				INFOPLIST_FILE = "Meteo Kraze iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,11 +375,13 @@
 		};
 		62B0908F214913C300EF494F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6F3876B422C37BA3A8EBF18 /* Pods-Meteo Kraze iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3Y2JU442CX;
+				DEVELOPMENT_TEAM = TAAUM7S3Z8;
 				INFOPLIST_FILE = "Meteo Kraze iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
