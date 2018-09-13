@@ -9,13 +9,14 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import RxSwift
 
 class MeteoService {
     
     static let shared = MeteoService()
     private let apiKey = "4271a4992f162462f555468b8aa580f2"
     
-    var cities = [WeatherData]()
+    var cities = Variable<[WeatherData]>([WeatherData]())
     
     func getWeahter(city: String) {
         let url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey
@@ -25,7 +26,7 @@ class MeteoService {
                     return
                 }
                 let json = try JSON(data: response.data!)
-                self.parseResponse(json: json)
+                self.parseResponse(json: json, isCurr: false)
             } catch {
                 print("Guillaume - Error parsing JSON")
             }
@@ -42,7 +43,7 @@ class MeteoService {
                     return
                 }
                 let json = try JSON(data: response.data!)
-                self.parseResponse(json: json)
+                self.parseResponse(json: json, isCurr: true)
             } catch {
                 print("Guillaume - Error parsing JSON")
             }
@@ -50,7 +51,7 @@ class MeteoService {
         }
     }
     
-    func parseResponse(json: JSON) {
+    func parseResponse(json: JSON, isCurr: Bool) {
         guard let cityName = json["name"].string else { return }
         guard let description = json["weather"][0]["description"].string else { return }
         guard let humidity = json["main"]["humidity"].int else { return }
@@ -58,8 +59,8 @@ class MeteoService {
         guard let tempMax = json["main"]["temp_max"].int else { return }
         guard let tempMin = json["main"]["temp_min"].int else { return }
         guard let wind = json["wind"]["speed"].float else { return }
-        guard let sunrise = json["sys"]["sunrise"].int64 else { return }
-        guard let sunset = json["sys"]["sunset"].int64 else { return }
+        guard let sunrise = json["sys"]["sunrise"].double else { return }
+        guard let sunset = json["sys"]["sunset"].double else { return }
         
         let data = WeatherData(cityName: cityName,
                                temp: temp,
@@ -69,10 +70,10 @@ class MeteoService {
                                wind: wind,
                                sunrise: sunrise,
                                sunset: sunset,
-                               isCurrent: false,
+                               isCurrent: isCurr,
                                description: description)
         print("Guillaume - Got weather from city \(data.cityName)")
-        self.cities.append(data)
+        self.cities.value.append(data)
     }
     
 }

@@ -15,8 +15,8 @@ struct WeatherData {
     var tempMin: Int
     var humidity: Int
     var wind: Float
-    var sunrise: Int64
-    var sunset: Int64
+    var sunrise: Double
+    var sunset: Double
     var isCurrent: Bool
     var description: String
 }

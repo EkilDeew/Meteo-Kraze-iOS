@@ -8,4 +8,6 @@ target 'Meteo Kraze iOS' do
   # Pods for Meteo Kraze iOS
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
 end
