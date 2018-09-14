@@ -33,6 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             .disposed(by: disposeBag)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCityButton))
+        
+        MeteoService.shared.getSavedCities()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -16,10 +16,17 @@ class MeteoService {
     static let shared = MeteoService()
     private let apiKey = "4271a4992f162462f555468b8aa580f2"
     
+    private let userDefaultsKey = "meteo_kraze_key"
+    
     var cities = Variable<[WeatherData]>([WeatherData]())
     
     func getWeather(city: String) {
-        let url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey
+        
+        guard let cityEncoded = city.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else {
+            return
+        }
+        
+        let url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityEncoded + "&appid=" + apiKey
         Alamofire.request(url).responseJSON { response in
             do {
                 guard response.data != nil else {
@@ -74,6 +81,25 @@ class MeteoService {
                                description: description)
         print("Guillaume - Got weather from city \(data.cityName)")
         self.cities.value.append(data)
+        
+        var city_name: Array<String> = []
+        for city in cities.value {
+            if city.isCurrent != true {
+                city_name.append(city.cityName)
+            }
+            UserDefaults.standard.set(city_name, forKey: userDefaultsKey)
+        }
+    }
+    
+    func getSavedCities() {
+        guard let cities_name = UserDefaults.standard.array(forKey: userDefaultsKey) as? Array<String> else {
+            return
+        }
+        if cities_name.count > 0 {
+            for city in cities_name {
+                getWeather(city: city)
+            }
+        }
     }
     
 }
