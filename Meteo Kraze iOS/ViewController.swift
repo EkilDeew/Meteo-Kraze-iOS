@@ -152,6 +152,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCell.EditingStyle.delete) {
             MeteoService.shared.cities.value.remove(at: indexPath.row)
+            MeteoService.shared.saveCities()
         }
     }
  

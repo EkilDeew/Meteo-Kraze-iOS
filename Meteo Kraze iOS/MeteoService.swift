@@ -81,14 +81,7 @@ class MeteoService {
                                description: description)
         print("Guillaume - Got weather from city \(data.cityName)")
         self.cities.value.append(data)
-        
-        var city_name: Array<String> = []
-        for city in cities.value {
-            if city.isCurrent != true {
-                city_name.append(city.cityName)
-            }
-            UserDefaults.standard.set(city_name, forKey: userDefaultsKey)
-        }
+        saveCities()
     }
     
     func getSavedCities() {
@@ -99,6 +92,16 @@ class MeteoService {
             for city in cities_name {
                 getWeather(city: city)
             }
+        }
+    }
+    
+    func saveCities() {
+        var city_name: Array<String> = []
+        for city in cities.value {
+            if city.isCurrent != true {
+                city_name.append(city.cityName)
+            }
+            UserDefaults.standard.set(city_name, forKey: userDefaultsKey)
         }
     }
     
